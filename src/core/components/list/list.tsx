@@ -1,3 +1,3 @@
 export function List() {
-    return <></>;
+    return <ul className="characters-list row list-unstyled">Personaje</ul>;
 }
