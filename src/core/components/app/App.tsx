@@ -1,8 +1,10 @@
+import { List } from '../list/list';
+
 export function App() {
     return (
-        <>
-            <h1>Hola mundo</h1>
-        </>
+        <div className="app container">
+            <List></List>
+        </div>
     );
 }
 
