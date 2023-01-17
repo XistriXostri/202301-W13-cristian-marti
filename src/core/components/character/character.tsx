@@ -1,4 +1,26 @@
 export function Character() {
+    // const getEmoji = (character: Rey | Asesor | Luchador | Escudero) => {
+    //     if (character instanceof Rey) return '👑';
+    //     if (character instanceof Luchador) return '🗡';
+    //     if (character instanceof Asesor) return '🎓';
+    //     if (character instanceof Escudero) return '🛡';
+    // };
+
+    // const getFeatures = (character: Rey | Asesor | Luchador | Escudero) => {
+    //     if (character instanceof Rey)
+    //         return `<li>Años de reinado: ${character.regnalYears}</li>`;
+    //     if (character instanceof Luchador) {
+    //         return `<li>Arma: ${character.weapon}</li>
+    //                 <li>Destreza: ${character.skill}</li>`;
+    //     }
+    //     if (character instanceof Asesor)
+    //         return `<li>Asesora a: ${character.characterHeAdvises}</li>`;
+    //     if (character instanceof Escudero) {
+    //         return `<li>Peloteo: ${character.suckerDegree}</li>
+    //                 <li>Sirve a: ${character.characterHeServes}</li>`;
+    //     }
+    // };
+
     return (
         <li className="character col">
             <div className="card character__card">
