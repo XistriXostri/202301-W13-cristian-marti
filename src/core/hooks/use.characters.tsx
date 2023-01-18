@@ -1,11 +1,12 @@
 import { useReducer } from 'react';
 import { getCharactersData } from '../data/characters.data';
 import { CharacterFeatures, CharactersFeatures } from '../models/character';
-import { characterUpdateCreator } from '../reducers/action.creators';
+import { characterDieCreator } from '../reducers/action.creators';
+import { characterReducer } from '../reducers/character.reducer';
 
 export type UseCharacters = {
     getCharacters: () => CharactersFeatures;
-    handleUpdate: (characterPayload: CharacterFeatures['id']) => void;
+    handleDie: (characterPayload: CharacterFeatures['id']) => void;
 };
 
 export function useCharacters(): UseCharacters {
@@ -14,7 +15,12 @@ export function useCharacters(): UseCharacters {
 
     const getCharacters = () => characters;
     console.log('LOAD hook');
-    const handleUpdate = (characterPayload: CharacterFeatures['id']) => {
-        dispatch(characterUpdateCreator(characterPayload));
+    const handleDie = (characterPayload: CharacterFeatures['id']) => {
+        dispatch(characterDieCreator(characterPayload));
+    };
+
+    return {
+        getCharacters,
+        handleDie,
     };
 }

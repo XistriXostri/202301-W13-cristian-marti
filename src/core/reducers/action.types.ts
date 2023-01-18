@@ -1,3 +1,3 @@
 export const characterActionTypes = {
-    update: 'character@update',
+    die: 'character@die',
 };

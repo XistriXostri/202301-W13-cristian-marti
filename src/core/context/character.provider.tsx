@@ -1,10 +1,22 @@
+import { useMemo } from 'react';
 import { CharacterContext } from './character.context';
+import { useCharacters } from '../hooks/use.characters';
 
-const context = {
-    character = [],
-};
+export function CharacterContextProvider({
+    children,
+}: {
+    children: JSX.Element;
+}) {
+    const { getCharacters, handleDie } = useCharacters();
 
-export function NoteContextProvider({ children }: { children: JSX.Element }) {
+    const context = useMemo(
+        () => ({
+            characters: getCharacters(),
+            handleDie,
+        }),
+        [getCharacters, handleDie]
+    );
+
     return (
         <CharacterContext.Provider value={context}>
             {children}
