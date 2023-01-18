@@ -21,6 +21,12 @@ body {
     object-position: top;
     height: 200px;
 }
+
+.character__picture--death {
+    transform: rotate(180deg);
+    filter: grayscale(100%);
+}
+
 .character__card {
     position: relative;
     border: none;
@@ -103,5 +109,4 @@ body {
 
 .fa-thumbs-down {
     color: red;
-    display: none;
 }

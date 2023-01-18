@@ -56,8 +56,11 @@ export function Item({ character }: { character: CharacterFeatures }) {
                 <img
                     src={character.img}
                     alt={character.name + ' ' + character.family}
-                    className="character__picture card-img-top"
-                    id={'img' + character.name}
+                    className={
+                        character.isAlive
+                            ? 'character__picture card-img-top'
+                            : 'character__picture card-img-top character__picture--death'
+                    }
                 />
                 <div className="card-body">
                     <h2 className="character__name card-title h4">
@@ -67,15 +70,18 @@ export function Item({ character }: { character: CharacterFeatures }) {
                         <ul className="list-unstyled">
                             <li>Edad: {character.age} años</li>
                             <li>
-                                Estado:
-                                <i
-                                    className="fas fa-thumbs-down"
-                                    id={'down' + character.name}
-                                ></i>
-                                <i
-                                    className="fas fa-thumbs-up"
-                                    id={'up' + character.name}
-                                ></i>
+                                Estado:{' '}
+                                {character.isAlive ? (
+                                    <i
+                                        className="fas fa-thumbs-up"
+                                        id={'up' + character.name}
+                                    ></i>
+                                ) : (
+                                    <i
+                                        className="fas fa-thumbs-down"
+                                        id={'down' + character.name}
+                                    ></i>
+                                )}
                             </li>
                         </ul>
                     </div>
@@ -84,19 +90,24 @@ export function Item({ character }: { character: CharacterFeatures }) {
                             {getFeatures(character)}
                         </ul>
                         <div className="character__actions">
-                            <button
-                                className="character__action btn"
-                                id="comunicate"
-                            >
-                                habla
-                            </button>
-                            <button
-                                onClick={handleClick}
-                                className="character__action btn"
-                                id="die"
-                            >
-                                muere
-                            </button>
+                            {character.isAlive && (
+                                <button
+                                    className="character__action btn"
+                                    id="comunicate"
+                                >
+                                    habla
+                                </button>
+                            )}
+
+                            {character.isAlive && (
+                                <button
+                                    onClick={handleClick}
+                                    className="character__action btn"
+                                    id="die"
+                                >
+                                    muere
+                                </button>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -105,3 +116,7 @@ export function Item({ character }: { character: CharacterFeatures }) {
         </>
     );
 }
+
+/*
+                           
+*/
