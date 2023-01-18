@@ -1,5 +1,7 @@
 import { Character } from './character';
 import { Fighter } from './fighter';
+import { King } from './king';
+import { Squire } from './squire';
 
 export class Advisor extends Character {
     constructor(
