@@ -1,3 +1,5 @@
+import { SyntheticEvent, useContext } from 'react';
+import { CharacterContext } from '../../context/character.context';
 import { Advisor } from '../../models/advisor';
 import { CharacterFeatures } from '../../models/character';
 import { Fighter } from '../../models/fighter';
@@ -5,6 +7,18 @@ import { King } from '../../models/king';
 import { Squire } from '../../models/squire';
 
 export function Item({ character }: { character: CharacterFeatures }) {
+    const { handleDie } = useContext(CharacterContext);
+
+    const handleClick = (event: SyntheticEvent) => {
+        const action = (event.target as HTMLElement).id;
+        switch (action) {
+            case 'comunicate':
+                break;
+            case 'die':
+                handleDie(character.id);
+                break;
+        }
+    };
     const getFeatures = (character: CharacterFeatures) => {
         if (character instanceof King)
             return (
@@ -72,13 +86,14 @@ export function Item({ character }: { character: CharacterFeatures }) {
                         <div className="character__actions">
                             <button
                                 className="character__action btn"
-                                id={'comunicate' + character.name}
+                                id="comunicate"
                             >
                                 habla
                             </button>
                             <button
+                                onClick={handleClick}
                                 className="character__action btn"
-                                id={'die' + character.name}
+                                id="die"
                             >
                                 muere
                             </button>
