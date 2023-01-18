@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 import { CharactersFeatures, CharacterFeatures } from '../models/character';
 
-type CharacterContextStructure = {
+export type CharacterContextStructure = {
     characters: CharactersFeatures;
     handleDie: (characterPayload: CharacterFeatures['id']) => void;
     handleComunicate: (characterPayload: CharacterFeatures['id']) => void;
