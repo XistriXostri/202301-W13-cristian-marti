@@ -14,7 +14,7 @@ export type CharacterStructure = {
     weapon?: string;
     skill?: number;
     regnalYears?: number;
-    characterHeServes?: number;
+    characterHeServes?: string;
     fidelity?: number;
 };
 
@@ -34,7 +34,7 @@ export class Character implements CharacterStructure {
     public weapon?: string;
     public skill?: number;
     public regnalYears?: number;
-    public characterHeServes?: number;
+    public characterHeServes?: string;
     public fidelity?: number;
     constructor(
         public name: string,
