@@ -1,11 +1,11 @@
 import { Advisor } from '../../models/advisor';
-import { CharacterOptions } from '../../models/character';
+import { CharacterFeatures } from '../../models/character';
 import { Fighter } from '../../models/fighter';
 import { King } from '../../models/king';
 import { Squire } from '../../models/squire';
 
-export function Item({ character }: { character: CharacterOptions }) {
-    const getFeatures = (character: CharacterOptions) => {
+export function Item({ character }: { character: CharacterFeatures }) {
+    const getFeatures = (character: CharacterFeatures) => {
         if (character instanceof King)
             return (
                 <>

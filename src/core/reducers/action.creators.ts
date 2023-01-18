@@ -6,9 +6,9 @@ export type CharacterAction = {
     payload: Character['id'];
 };
 
-export const characterUpdateCreator = (
+export const characterDieCreator = (
     payload: Character['id']
 ): CharacterAction => ({
-    type: characterActionTypes.update,
+    type: characterActionTypes.die,
     payload,
 });

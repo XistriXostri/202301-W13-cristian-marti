@@ -1,9 +1,10 @@
-import { getCharactersData } from '../../data/characters.data';
+import { useContext } from 'react';
+import { CharacterContext } from '../../context/character.context';
 import { Item } from '../item/item';
 
 export function List() {
-    const characters = getCharactersData();
-    console.log(characters);
+    const { characters } = useContext(CharacterContext);
+
     return (
         <ul className="characters-list row list-unstyled">
             {characters.map((character) => {
