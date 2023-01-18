@@ -7,14 +7,15 @@ export function CharacterContextProvider({
 }: {
     children: JSX.Element;
 }) {
-    const { getCharacters, handleDie } = useCharacters();
+    const { getCharacters, handleDie, handleComunicate } = useCharacters();
 
     const context = useMemo(
         () => ({
             characters: getCharacters(),
             handleDie,
+            handleComunicate,
         }),
-        [getCharacters, handleDie]
+        [getCharacters, handleDie, handleComunicate]
     );
 
     return (

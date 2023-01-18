@@ -7,12 +7,14 @@ import { King } from '../../models/king';
 import { Squire } from '../../models/squire';
 
 export function Item({ character }: { character: CharacterFeatures }) {
-    const { handleDie } = useContext(CharacterContext);
+    const { handleDie, handleComunicate } = useContext(CharacterContext);
 
     const handleClick = (event: SyntheticEvent) => {
         const action = (event.target as HTMLElement).id;
         switch (action) {
             case 'comunicate':
+                console.log(character.name, 'va a hablar');
+                handleComunicate(character.id);
                 break;
             case 'die':
                 handleDie(character.id);
@@ -92,6 +94,7 @@ export function Item({ character }: { character: CharacterFeatures }) {
                         <div className="character__actions">
                             {character.isAlive && (
                                 <button
+                                    onClick={handleClick}
                                     className="character__action btn"
                                     id="comunicate"
                                 >

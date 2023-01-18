@@ -1,12 +1,16 @@
 import { useReducer } from 'react';
 import { getCharactersData } from '../data/characters.data';
 import { CharacterFeatures, CharactersFeatures } from '../models/character';
-import { characterDieCreator } from '../reducers/action.creators';
+import {
+    characterComunicateCreator,
+    characterDieCreator,
+} from '../reducers/action.creators';
 import { characterReducer } from '../reducers/character.reducer';
 
 export type UseCharacters = {
     getCharacters: () => CharactersFeatures;
     handleDie: (characterPayload: CharacterFeatures['id']) => void;
+    handleComunicate: (characterPayload: CharacterFeatures['id']) => void;
 };
 
 export function useCharacters(): UseCharacters {
@@ -19,8 +23,16 @@ export function useCharacters(): UseCharacters {
         dispatch(characterDieCreator(characterPayload));
     };
 
+    const handleComunicate = (characterPayload: CharacterFeatures['id']) => {
+        dispatch(characterComunicateCreator(characterPayload));
+        setTimeout(() => {
+            dispatch(characterComunicateCreator(characterPayload));
+        }, 2000);
+    };
+
     return {
         getCharacters,
         handleDie,
+        handleComunicate,
     };
 }
