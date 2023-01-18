@@ -12,3 +12,10 @@ export const characterDieCreator = (
     type: characterActionTypes.die,
     payload,
 });
+
+export const characterComunicateCreator = (
+    payload: Character['id']
+): CharacterAction => ({
+    type: characterActionTypes.comunicate,
+    payload,
+});

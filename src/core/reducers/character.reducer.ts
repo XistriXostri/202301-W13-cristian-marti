@@ -20,6 +20,19 @@ export function characterReducer(
             });
             return updatedCharacters;
 
+        case characterActionTypes.comunicate:
+            const talkingCharacter = action.payload;
+            const newCharacters = state.map((item) => {
+                if (item.id === talkingCharacter) {
+                    console.log(item.name, 'comunicate', item.comunicate);
+                    return {
+                        ...item,
+                        comunicate: !item.comunicate,
+                    };
+                }
+                return item;
+            });
+            return newCharacters;
         default:
             return [...state];
     }

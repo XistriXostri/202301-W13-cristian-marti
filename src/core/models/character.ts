@@ -8,8 +8,7 @@ export type CharacterStructure = {
     message: string;
     emoji: string;
     id: string;
-    comunicate: () => string;
-    death: () => void;
+    comunicate: boolean;
 };
 
 export class Character implements CharacterStructure {
@@ -24,6 +23,7 @@ export class Character implements CharacterStructure {
     public isAlive: boolean;
     public tvShow: string;
     public img: string;
+    public comunicate: boolean;
     constructor(
         public name: string,
         public family: string,
@@ -35,12 +35,7 @@ export class Character implements CharacterStructure {
         this.tvShow = 'Game of Thrones';
         this.img = `./assets/img/${this.name}.jpg`;
         this.emoji = '';
-    }
-    death() {
-        this.isAlive = false;
-    }
-    comunicate() {
-        return this.message;
+        this.comunicate = false;
     }
 }
 
@@ -54,8 +49,7 @@ export type CharacterFeatures = {
     message: string;
     emoji: string;
     id: string;
-    comunicate: () => string;
-    death: () => void;
+    comunicate: boolean;
     characterHeAdvises?: string;
     weapon?: string;
     skill?: number;
