@@ -11,3 +11,5 @@ export const charactersData: Characters = [
     new Advisor('Tyrion', 'Lannister', 27, 'Daenerys'),
     new Squire('Bronn', '', 40, 'Jaime', 1),
 ];
+
+export const getCharactersData = () => charactersData;
