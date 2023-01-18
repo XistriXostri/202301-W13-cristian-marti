@@ -1,4 +1,3 @@
-import { Fighter } from './fighter';
 import { Character } from './character';
 export class Squire extends Character {
     public characterHeServes: string;

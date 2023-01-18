@@ -10,6 +10,12 @@ export type CharacterStructure = {
     id: string;
     comunicate: () => string;
     death: () => void;
+    characterHeAdvises?: string;
+    weapon?: string;
+    skill?: number;
+    regnalYears?: number;
+    characterHeServes?: number;
+    fidelity?: number;
 };
 
 export class Character implements CharacterStructure {
@@ -24,7 +30,12 @@ export class Character implements CharacterStructure {
     public isAlive: boolean;
     public tvShow: string;
     public img: string;
-
+    public characterHeAdvises?: string;
+    public weapon?: string;
+    public skill?: number;
+    public regnalYears?: number;
+    public characterHeServes?: number;
+    public fidelity?: number;
     constructor(
         public name: string,
         public family: string,
@@ -44,3 +55,5 @@ export class Character implements CharacterStructure {
         return this.message;
     }
 }
+
+export type Characters = Array<Character>;
