@@ -44,7 +44,7 @@ export class Character implements CharacterStructure {
     }
 }
 
-export type CharacterOptions = {
+export type CharacterFeatures = {
     isAlive: boolean;
     tvShow: string;
     name: string;
@@ -64,4 +64,4 @@ export type CharacterOptions = {
     fidelity?: number;
 };
 
-export type CharactersOptions = Array<CharacterOptions>;
+export type CharactersFeatures = Array<CharacterFeatures>;
