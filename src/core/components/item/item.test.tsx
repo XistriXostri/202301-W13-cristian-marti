@@ -3,12 +3,7 @@ import {
     CharacterContext,
     CharacterContextStructure,
 } from '../../context/character.context';
-import {
-    mockAdvisor,
-    mockFighter,
-    mockKing,
-    mockSquire,
-} from '../../mock/models.mocks';
+import { mockAdvisor, mockFighter } from '../../mock/models.mocks';
 import { Item } from './item';
 
 describe('Given "Item" component', () => {
