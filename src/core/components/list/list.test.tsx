@@ -1,14 +1,7 @@
-import { act, render, screen } from '@testing-library/react';
-import {
-    CharacterContext,
-    CharacterContextStructure,
-} from '../../context/character.context';
-import { mockCharacters } from '../../mock/models.mocks';
+import { render, screen } from '@testing-library/react';
 import { List } from './list';
 
 describe('Given "List" component', () => {
-    let mockContext: CharacterContextStructure;
-
     describe('When it is initially instantiated', () => {
         render(<List />);
 
